@@ -10,6 +10,13 @@ namespace Bricks.Logging
         }
 
         private CoreLogger() {}
-        public static readonly ILog Instance = LogManager.GetLogger("root");
+
+        public static ILog Instance
+        {
+            get
+            {
+                return LogManager.GetLogger("root");
+            }
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Bricks
         protected AssemblyConfiguration(string sectionGroup, string sectionName, Dictionary<string, object> defaultValues, ILog logger)
         {
             var nameValues = (NameValueCollection) ConfigurationManager.GetSection(sectionGroup + "/" + sectionName);
-            if (logger == null) logger = new ConsoleLogger();
+            if (logger == null) logger = CoreLogger.Instance;
             if (nameValues == null)
             {
                 nameValues = new NameValueCollection();
