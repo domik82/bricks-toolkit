@@ -16,10 +16,16 @@ namespace Bricks.Logging
                 {
                     var configFile = new FileInfo(log4NetFilePath);
                     XmlConfigurator.ConfigureAndWatch(configFile);
+                    CoreLogger.Instance.Info(
+                        string.Format("BricksLogger - log4net configured using default config file ({0})", configFile));
                 }
                 else
-                    Console.Error.WriteLine("Log4Net not configured. Looked for file: {0}",
+                    Console.Error.WriteLine("BricksLogger - Log4Net is not configured. Looked for default config file: {0}",
                                             new FileInfo(log4NetFilePath).FullName);
+            }
+            else
+            {
+                CoreLogger.Instance.Info("BricksLogger - log4net already configured.");
             }
         }
 

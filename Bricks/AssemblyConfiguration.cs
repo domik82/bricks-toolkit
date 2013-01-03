@@ -16,11 +16,17 @@ namespace Bricks
         protected AssemblyConfiguration(string sectionGroup, string sectionName, Dictionary<string, object> defaultValues, ILog logger)
         {
             var nameValues = (NameValueCollection) ConfigurationManager.GetSection(sectionGroup + "/" + sectionName);
-            if (logger == null) logger = CoreLogger.Instance;
+            if (logger == null)
+            {
+                logger = CoreLogger.Instance;
+                logger.Info("Using CoreLogger instance for logging.");
+            }
+
             if (nameValues == null)
             {
                 nameValues = new NameValueCollection();
             }
+
             CreateConfiguration(defaultValues, nameValues);
             foreach (KeyValuePair<string, string> pair in usedValues)
                 logger.InfoFormat("Using {0}={1} for {2}/{3}", pair.Key, pair.Value, sectionGroup, sectionName);
