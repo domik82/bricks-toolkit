@@ -8,14 +8,14 @@
     <Node Id="NUnit 2.6.0.12054" Label="NUnit 2.6.0.12054" Category="Package" />
     <Node Id="Bricks" Label="Bricks" Category="Project" />
     <Node Id="Castle.Core 3.0.0.4001" Label="Castle.Core 3.0.0.4001" Category="Package" />
-    <Node Id="log4net 1.2.10" Label="log4net 1.2.10" Category="Package" />
+    <Node Id="log4net 1.2.11" Label="log4net 1.2.11" Category="Package" />
   </Nodes>
   <Links>
     <Link Source="Bricks.UnitTests" Target="Castle.Core 3.0.0.4001" Category="Installed Package" />
     <Link Source="Bricks.UnitTests" Target="NUnit 2.6.0.12054" Category="Installed Package" />
     <Link Source="Bricks.Testing" Target="NUnit 2.6.0.12054" Category="Installed Package" />
     <Link Source="Bricks" Target="Castle.Core 3.0.0.4001" Category="Installed Package" />
-    <Link Source="Bricks" Target="log4net 1.2.10" Category="Installed Package" />
+    <Link Source="Bricks" Target="log4net 1.2.11" Category="Installed Package" />
   </Links>
   <Categories>
     <Category Id="Project" />
